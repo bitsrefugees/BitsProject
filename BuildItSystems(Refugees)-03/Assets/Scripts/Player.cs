@@ -1,4 +1,4 @@
-﻿    
+    
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -107,4 +107,5 @@ public class Player : MonoBehaviour {
         //reverse current x axis scaling 
     }
 
+    
 }
