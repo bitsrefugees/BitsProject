@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 
     //configuration of game
     [SerializeField] float jSpeed = 25f;  // edit these fields from the unity engine screen, under the player object. 
-    [SerializeField] float runSpeed = 8f;
+    [SerializeField] public float runSpeed = 8f;
 
     [SerializeField] float climbSpeed= 5f;
 
