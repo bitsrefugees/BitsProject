@@ -27,6 +27,8 @@ public class Player : MonoBehaviour {
 
     bool isAlive = true;
 
+     [SerializeField] int framePowerTimer= 0; 
+
 
     //cache
     Rigidbody2D playerBody;
@@ -54,7 +56,34 @@ public class Player : MonoBehaviour {
         FlipSprite(); //change players animation direction for running left or right. 
 
         ClimbLadder();
+        SpeedBoostTimer();
 	}
+
+    private void SpeedBoostTimer() {
+        if( runSpeed >16 ){ // if player picks up too many powerups we can end up with permanent stacking speed boosts. this limits it to one powerup at a time. 
+
+            runSpeed = 16;  
+            
+        }
+
+        if (runSpeed == 16f){
+            framePowerTimer = framePowerTimer + 1000;
+            climbSpeed = 7f;
+            
+            runSpeed =15f;
+        }
+        if (runSpeed > 8f) {
+            framePowerTimer = framePowerTimer - 1;
+
+        }
+        if (framePowerTimer == 0){
+            runSpeed = 8f;
+            climbSpeed = 5f;
+            
+        }
+        
+
+    }
 
     private void Run()
     {

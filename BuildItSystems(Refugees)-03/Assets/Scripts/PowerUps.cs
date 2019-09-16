@@ -25,7 +25,7 @@ public class PowerUps : MonoBehaviour
 		Player p = player.GetComponent<Player>();
 		Instantiate(effect, transform.position, transform.rotation);
 
-        p.runSpeed += multi;
+        p.runSpeed = 16f;
 	
         Destroy(gameObject);
 	}
