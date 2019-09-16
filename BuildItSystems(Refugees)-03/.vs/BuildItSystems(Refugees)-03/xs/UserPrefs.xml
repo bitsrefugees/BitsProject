@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{27CB3261-C6DF-1AF0-D58D-A65354497C15}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PowerUps.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="110" Column="5" />
-      <File FileName="Assets/Scripts/PowerUps.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="22" Column="29" />
+      <File FileName="Assets/Scripts/PowerUps.cs" Line="25" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="803e29ba-958d-4ee5-a614-d6d6800f8d70" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b54f1db1-62a3-4358-91a6-c77af124ae0e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

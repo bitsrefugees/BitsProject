@@ -5,11 +5,15 @@ using UnityEngine;
 public class PowerUps : MonoBehaviour
 {
 	public bool speedUp;
-	public float powerTime;
+	public float powerTime = 0;
+    public float limit = 5;
 	public GameObject effect;
 	public float multi = 8f;
+
+    
     void OnTriggerEnter2D(Collider2D other)
 	{
+        
         if (other.name == "Player Object")
 		{
 			Pick(other);
@@ -20,7 +24,9 @@ public class PowerUps : MonoBehaviour
 	{
 		Player p = player.GetComponent<Player>();
 		Instantiate(effect, transform.position, transform.rotation);
-		p.runSpeed += multi;
-		Destroy(gameObject);
+
+        p.runSpeed += multi;
+	
+        Destroy(gameObject);
 	}
 }
