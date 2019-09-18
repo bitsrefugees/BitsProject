@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
     [SerializeField] public float runSpeed = 8f;
 
     [SerializeField] float climbSpeed= 5f;
+    [SerializeField] Vector2 deathThrow = new Vector2(0f, 0f);
 
     //states
 
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour {
 
     //cache
     Rigidbody2D playerBody;
+    CapsuleCollider2D myBodyCollider;
     Animator playerAnimation;
     Collider2D player2Dcollision;
     
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour {
     //Methods
 	void Start () {
         playerBody = GetComponent<Rigidbody2D>(); // create class reference to rigid body(otherwise locked in methods) 
+        myBodyCollider = GetComponent<CapsuleCollider2D>();
 	
         playerAnimation = GetComponent<Animator>();
         player2Dcollision = GetComponent<Collider2D>();
@@ -49,7 +52,8 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        if (!isAlive){
+            return;}
         Run(); // call run method to perform player movements. 
         Jump();
 
@@ -57,8 +61,23 @@ public class Player : MonoBehaviour {
 
         ClimbLadder();
         SpeedBoostTimer();
+        Die();
 	}
 
+
+      private void Die()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+        {
+            
+            isAlive = false;
+            playerAnimation.SetTrigger("Dying");
+            GetComponent<Rigidbody2D>().velocity = deathThrow;
+            
+            
+           // FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        }
+    }
     private void SpeedBoostTimer() {
         if( runSpeed >16 ){ // if player picks up too many powerups we can end up with permanent stacking speed boosts. this limits it to one powerup at a time. 
 
