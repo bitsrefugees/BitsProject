@@ -20,8 +20,8 @@ TagManager:
   - Background
   - Enemy
   - Player2
-  - 
-  - 
+  - Interact
+  - EMPTY
   - 
   - 
   - 
@@ -56,4 +56,10 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 4155630535
+    locked: 0
+  - name: Interact
+    uniqueID: 91105159
+    locked: 0
+  - name: EMPTY
+    uniqueID: 3953067627
     locked: 0
