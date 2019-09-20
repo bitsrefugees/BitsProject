@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
     [SerializeField] public float runSpeed = 8f;
 
     [SerializeField] float climbSpeed= 5f;
-    [SerializeField] Vector2 deathThrow = new Vector2(0f, 0f);
+    
 
     //states
 
@@ -72,7 +72,8 @@ public class Player : MonoBehaviour {
             
             isAlive = false;
             playerAnimation.SetTrigger("Dying");
-            GetComponent<Rigidbody2D>().velocity = deathThrow;
+            
+            FindObjectOfType<GameController>().ProcessPlayerDeath();
             
             
            // FindObjectOfType<GameSession>().ProcessPlayerDeath();
